@@ -6,7 +6,7 @@ public class TP02 {
         // Kerjakan soalnya di sini
         Scanner input = new Scanner(System.in);
 
-        String namaPembeli = input.nextLine();
+        String namaPembeli = input.next();
         int Jumlah_Barang = input.nextInt();
         int Harga_perbarang = input.nextInt();
 
