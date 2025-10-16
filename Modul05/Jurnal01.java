@@ -15,26 +15,26 @@ public class Jurnal01 {
         switch (menu) {
             case 1:
                 namaMenu = "Nasi Goreng";
-                harga = 15000;
+                harga = 15;
                 break;
             case 2:
             namaMenu = "Mie Goreng/Nyemek";
-            harga = 18000; 
+            harga = 18; 
                 break;
             case 3:
                 namaMenu = "Kwetiau Goreng/Nyemek";
-                harga = 20000;
+                harga = 20;
                 break;
             case 4:
                 namaMenu = "Capcay Goreng/Kuah";
-                harga = 23000;
+                harga = 23;
                 break;
             default:
             System.out.println("Menu tidak ada!");
                 return;
         }
         int total = jumlahMakanan * harga;
-        System.out.println(namaMenu + " " + jumlahMakanan + " buah, total harga Rp. " + total );
+        System.out.println(namaMenu + " " + jumlahMakanan + " buah, total harga Rp. " + total + ".000");
 
     }
 }

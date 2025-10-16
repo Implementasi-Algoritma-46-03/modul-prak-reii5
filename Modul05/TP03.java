@@ -28,27 +28,11 @@ public class TP03 {
                 int alas = in.nextInt();
                 int tinggi = in.nextInt();
                 double luass = 0.5 * alas * tinggi;
-                int luas1 = (int) luass;
-                int sisiMiring = (alas * alas) + (tinggi * tinggi);
-
-                int angka = 1;
-                int akar = -1;
-                while (angka * angka <= sisiMiring) {
-     
-                    if (angka * angka == sisiMiring) {
-                        akar = angka;
-                        break;
-                    }
-                    angka++;
-                }
-
-                if (akar != -1){
-                    int kelilings = alas + tinggi + akar;
-                    System.out.println(luas1);
-                    System.out.println(kelilings);
-                }else{
-                    System.out.println(""); 
-                }
+                double kelilings = alas + tinggi + Math.sqrt(alas * alas + tinggi * tinggi);
+                System.out.println((int)luass);
+                System.out.println((int) kelilings);
+                break;
+    
             case "lingkaran":
                 int diameter = in.nextInt();
                 double jari_jari = diameter / 2;

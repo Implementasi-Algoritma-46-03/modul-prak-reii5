@@ -45,9 +45,6 @@ public class TP01 {
             case "desember":
                 System.out.println("decembre");
                 break;
-            default:
-                System.out.println("bulan tidak ditemukan");
-                break;
         }
     }
 }
