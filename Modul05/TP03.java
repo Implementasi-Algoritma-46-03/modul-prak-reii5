@@ -39,7 +39,7 @@ public class TP03 {
                 double pi = 3.14;
                 double luasl = pi * (jari_jari * jari_jari);
                 double kelilingl = 2 * pi * jari_jari;
-                System.out.printf("%.2f", luasl);
+                System.out.printf("%.2f ", luasl);
                 System.out.printf("%.2f", kelilingl);
 
         }
