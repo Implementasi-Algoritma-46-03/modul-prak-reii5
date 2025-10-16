@@ -1,8 +1,8 @@
 ## Identitas
 
-Nama: Pasya Muhammad Rizky
+Nama: Sofian Triadi
 
-NIM : 607062500047
+NIM : 607062500041
 
 ## Instruksi
 

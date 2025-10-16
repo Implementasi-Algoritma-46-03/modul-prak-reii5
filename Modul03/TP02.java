@@ -1,34 +1,17 @@
 import java.util.Scanner;
 
 public class TP02 {
-    public static void main(String[] args) {
+
+    public static void main(final String[] args) {
+        // Kerjakan soalnya di sini
         Scanner input = new Scanner(System.in);
-        String nama = input.next();
-        int jumlahBarang = input.nextInt();
-        int hargaPerBarang = input.nextInt();
-        int totalBelanja = jumlahBarang * hargaPerBarang;
-        System.out.println("Hi, " + nama + ". Total belanja adalah " + totalBelanja + " rupiah.");
-        input.close();
-public class TP02 {
 
-    public static void main(String[] args) {
-        Scanner tugas2 = new Scanner(System.in);
-         // Kerjakan soalnya di sini
+        String namaPembeli = input.next();
+        int Jumlah_Barang = input.nextInt();
+        int Harga_perbarang = input.nextInt();
 
-        String nama = tugas2.next();
-        int jumlah = tugas2.nextInt();
-        int harga = tugas2.nextInt();
+        int Total_harga = Jumlah_Barang * Harga_perbarang;
 
-        int total = harga * jumlah;
-
-        System.out.println("Hi, " + nama + ". Total belanja adalah " + total + " rupiah.");
-
-        tugas2.close();
+        System.out.println("Hi, " + namaPembeli + ". Total belanja adalah " + Total_harga + " rupiah.");
     }
 }
-
-/**PS E:\Pasyaaaaaaa\d3if-49-03-Pasya16> cd Modul01
-PS E:\Pasyaaaaaaa\d3if-49-03-Pasya16\Modul01> javac TP02.java
-E:\Pasyaaaaaaa\d3if-49-03-Pasya16\Modul01> java TP02
-Dira 5 2000
-10000*/
