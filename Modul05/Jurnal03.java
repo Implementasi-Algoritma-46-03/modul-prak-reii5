@@ -21,7 +21,7 @@ public class Jurnal03 {
                 total = angka1 * angka2;
                 break;
             case '/':
-                total = angka1 / angka2;
+                total = (double) angka1 / angka2;
             default:
                 break;
         }
