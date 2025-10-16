@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Jurnal03 {
-
     public static void main(final String[] args) {
         // Kerjakan soalnya di sini
         Scanner in = new Scanner(System.in);
@@ -27,7 +26,7 @@ public class Jurnal03 {
                 break;
         }
         if (c == '/'){
-            System.out.println(total);
+            System.out.printf("%.7f", total);
         }else{
             System.out.println((int) total);
         }
