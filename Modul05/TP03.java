@@ -13,24 +13,24 @@ public class TP03 {
                 int sisi = in.nextInt();
                 int luas = sisi * 3;
                 int keliling = sisi * 4;
-                System.out.println(luas);
-                System.out.println(keliling);
+                System.out.println(luas + " " + keliling);
+                
                 break;
             case "persegi panjang":
                 int panjang = in.nextInt();
                 int lebar = in.nextInt();
                 int luasp = panjang * lebar;
                 int kelilingp = 2 * (panjang + lebar);
-                System.out.println(luasp);
-                System.out.println(kelilingp);
+                System.out.print(luasp + " " + kelilingp);
+           
                 break;
             case "segitiga":
                 int alas = in.nextInt();
                 int tinggi = in.nextInt();
                 double luass = 0.5 * alas * tinggi;
                 double kelilings = alas + tinggi + Math.sqrt(alas * alas + tinggi * tinggi);
-                System.out.println((int)luass);
-                System.out.println((int) kelilings);
+                System.out.print((int)luass + " " + (int) kelilings);
+
                 break;
     
             case "lingkaran":
@@ -39,9 +39,8 @@ public class TP03 {
                 double pi = 3.14;
                 double luasl = pi * (jari_jari * jari_jari);
                 double kelilingl = 2 * pi * jari_jari;
-                System.out.printf("%.2f", luasl );
-                System.out.println();
-                System.out.printf("%.2f", kelilingl);
+                System.out.printf("%.2f", luasl + " " + kelilingl);
+
         }
 
     }

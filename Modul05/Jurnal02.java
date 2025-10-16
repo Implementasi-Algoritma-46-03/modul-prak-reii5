@@ -1,193 +1,69 @@
 import java.util.Scanner;
 
 public class Jurnal02 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-    public static void main(final String[] args) {
-        // Kerjakan soalnya di sini
-        Scanner in = new Scanner(System.in);
-        String namaHari = in.nextLine().toLowerCase();
-        int bilangan = in.nextInt();
-        int sisaHari = bilangan % 7;
+        String hariAwal = input.nextLine();
+        int n = input.nextInt();
 
-        switch (namaHari) {
-            case "senin":
-                switch (sisaHari) {
-                    case 0:
-                        System.out.println("Senin");
-                        break;
-                    case 1:
-                        System.out.println("Selasa");
-                        break;
-                    case 2:
-                        System.out.println("Rabu");
-                        break;
-                    case 3:
-                        System.out.println("Kamis");
-                        break;
-                    case 4:
-                        System.out.println("Jumat");
-                        break;
-                    case 5:
-                        System.out.println("Sabtu");
-                        break;
-                    case 6:
-                        System.out.println("Minggu");
-                        break; 
-                }
+        int namaHari = 0;
+        switch (hariAwal) {
+            case "Senin":
+                namaHari = 0;
                 break;
-            case "selasa":
-                switch (sisaHari) {
-                    case 1:
-                        System.out.println("Senin");
-                        break;
-                    case 2:
-                        System.out.println("Selasa");
-
-                        break;
-                    case 3:
-                        System.out.println("Rabu");
-                        break;
-                    case 4:
-                        System.out.println("Kamis");
-                        break;
-                    case 5:
-                        System.out.println("Jumat");
-                        break;
-                    case 6:
-                        System.out.println("Sabtu");
-                        break;
-                    case 0:
-                        System.out.println("Minggu");
-                        break;
-                }break;
-                case "rabu":
-                switch (sisaHari) {
-                    case 5:
-                        System.out.println("Senin");
-                        break;
-                    case 6:
-                        System.out.println("Selasa");
-
-                        break;
-                    case 0:
-                        System.out.println("Rabu");
-                        break;
-                    case 1:
-                        System.out.println("Kamis");
-                        break;
-                    case 2:
-                        System.out.println("Jumat");
-                        break;
-                    case 3:
-                        System.out.println("Sabtu");
-                        break;
-                    case 4:
-                        System.out.println("Minggu");
-                        break;
-                }break;
-                case "kamis":
-                switch (sisaHari) {
-                    case 4:
-                        System.out.println("Senin");
-                        break;
-                    case 5:
-                        System.out.println("Selasa");
-
-                        break;
-                    case 6:
-                        System.out.println("Rabu");
-                        break;
-                    case 0:
-                        System.out.println("Kamis");
-                        break;
-                    case 1:
-                        System.out.println("Jumat");
-                        break;
-                    case 2:
-                        System.out.println("Sabtu");
-                        break;
-                    case 3:
-                        System.out.println("Minggu");
-                        break;
-                }break;
-                case "jumat":
-                switch (sisaHari) {
-                    case 3:
-                        System.out.println("Senin");
-                        break;
-                    case 4:
-                        System.out.println("Selasa");
-
-                        break;
-                    case 5:
-                        System.out.println("Rabu");
-                        break;
-                    case 6:
-                        System.out.println("Kamis");
-                        break;
-                    case 0:
-                        System.out.println("Jumat");
-                        break;
-                    case 1:
-                        System.out.println("Sabtu");
-                        break;
-                    case 2:
-                        System.out.println("Minggu");
-                        break;
-                }break;
-                case "sabtu":
-                switch (sisaHari) {
-                    case 2:
-                        System.out.println("Senin");
-                        break;
-                    case 3:
-                        System.out.println("Selasa");
-
-                        break;
-                    case 4:
-                        System.out.println("Rabu");
-                        break;
-                    case 5:
-                        System.out.println("Kamis");
-                        break;
-                    case 6:
-                        System.out.println("Jumat");
-                        break;
-                    case 0:
-                        System.out.println("Sabtu");
-                        break;
-                    case 1:
-                        System.out.println("Minggu");
-                        break;
-                }break;
-                case "minggu":
-                switch (sisaHari) {
-                    case 1:
-                        System.out.println("Senin");
-                        break;
-                    case 2:
-                        System.out.println("Selasa");
-
-                        break;
-                    case 3:
-                        System.out.println("Rabu");
-                        break;
-                    case 4:
-                        System.out.println("Kamis");
-                        break;
-                    case 5:
-                        System.out.println("Jumat");
-                        break;
-                    case 6:
-                        System.out.println("Sabtu");
-                        break;
-                    case 0:
-                        System.out.println("Minggu");
-                        break;
-                }break;
-                default:
+            case "Selasa":
+                namaHari = 1;
                 break;
+            case "Rabu":
+                namaHari = 2;
+                break;
+            case "Kamis":
+                namaHari = 3;
+                break;
+            case "Jum'at":
+                namaHari = 4;
+                break;
+            case "Sabtu":
+                namaHari = 5;
+                break;
+            case "Minggu":
+                namaHari = 6;
+                break;
+            default:
+                System.out.println("Hari tidak valid");
+                return;
         }
 
-    }
+        int indexHasil = (namaHari + n) % 7;
+
+        String hasilHari;
+        switch (indexHasil) {
+            case 0:
+                hasilHari = "Senin";
+                break;
+            case 1:
+                hasilHari = "Selasa";
+                break;
+            case 2:
+                hasilHari = "Rabu";
+                break;
+            case 3:
+                hasilHari = "Kamis";
+                break;
+            case 4:
+                hasilHari = "Jum'at";
+                break;
+            case 5:
+                hasilHari = "Sabtu";
+                break;
+            case 6:
+                hasilHari = "Minggu";
+                break;
+            default:
+                hasilHari = "Hari tidak valid"; 
+        }
+
+        System.out.println(hasilHari);
+    }
 }
