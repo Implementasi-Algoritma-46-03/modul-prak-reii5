@@ -1,72 +1,88 @@
 import java.util.Scanner;
 
 public class TP03 {
-    public static void persegi(int angka){
-        int luas = angka * angka;
-        int keliling = 4 * angka;
-        System.out.print(luas);
-        System.out.println(keliling);
-    }
-    public static void persegiPanjang(int angka, int angka2){
-        int luas = angka * angka2;
-        int keliling = 2 * (angka + angka2);
-        System.out.print(luas);
-        System.out.println(keliling);
-    }
-    public static void segitiga(int angka, int angka2){
-        double luas =(double) 1 / 2 * angka * angka2;
-        double sisiMiring = Math.sqrt((angka * angka) + (angka2 * angka2));
-        double keliling = sisiMiring + angka + angka2;
-        int kelilingint = (int) keliling;
 
-        if (keliling - kelilingint > 0.5){
-            kelilingint++;
-        }else{
-            kelilingint = kelilingint;
-        }
-
-        System.out.print((int) luas);
-        System.out.println(kelilingint);
+    // Method untuk menghitung luas dan keliling persegi
+    public static int luasPersegi(int sisi) {
+        return sisi * sisi;
     }
-    public static void lingkaran(int angka){
-        double pi = 3.14;
-        double jari_jari = (double) angka / 2;
-        double luas = pi * ((double) jari_jari * jari_jari);
-        double keliling = 2 * pi * jari_jari;
-        System.out.printf("%.2f", luas);
-        System.out.printf("%.2f", keliling);
 
+    public static int kelilingPersegi(int sisi) {
+        return 4 * sisi;
+    }
+
+    // Method untuk menghitung luas dan keliling persegi panjang
+    public static int luasPersegiPanjang(int panjang, int lebar) {
+        return panjang * lebar;
+    }
+
+    public static int kelilingPersegiPanjang(int panjang, int lebar) {
+        return 2 * (panjang + lebar);
+    }
+
+    // Method untuk menghitung luas dan keliling segitiga (siku-siku)
+    public static double luasSegitiga(int alas, int tinggi) {
+        return 0.5 * alas * tinggi;
+    }
+
+    public static double kelilingSegitiga(int alas, int tinggi) {
+        double miring = Math.sqrt(alas * alas + tinggi * tinggi);
+        return alas + tinggi + miring;
+    }
+
+    // Method untuk menghitung luas dan keliling lingkaran
+    public static double luasLingkaran(int diameter) {
+        double jariJari = diameter / 2.0;
+        return 3.14 * jariJari * jariJari;
+    }
+
+    public static double kelilingLingkaran(int diameter) {
+        return 3.14 * diameter;
     }
 
     public static void main(final String[] args) {
-        // Kerjakan soalnya di sini
-        Scanner in = new Scanner(System.in);
-        String bangunDatar = in.nextLine().toLowerCase();
-        int bilangan = in.nextInt();
+        Scanner input = new Scanner(System.in);
 
-        if (bangunDatar.equals("persegi")|| bangunDatar.equals("lingkaran")){
-            switch (bangunDatar) {
-                case "persegi":
-                    persegi(bilangan);
-                    break;
-                case "lingkaran":
-                    lingkaran(bilangan);
-                    break;
-            }
-        }else{
-            int bilangan2 = in.nextInt();
-            switch (bangunDatar) {
-                case "persegi panjang":
-                    persegiPanjang(bilangan2, bilangan);
-                    break;
-                case "segitiga":
-                    segitiga(bilangan, bilangan2);
-                    break;
-                default:
-                System.out.println("error bangun datar tidak ditemukan, cek apakah anda typo dalam pengetikan");
-                    break;
-            }
+        String namaBangunDatar = input.nextLine();
+
+        double luas = 0;
+        double keliling = 0;
+
+        switch (namaBangunDatar) {
+            case "Persegi":
+                int sisi = input.nextInt();
+                luas = luasPersegi(sisi);
+                keliling = kelilingPersegi(sisi);
+                System.out.printf("%d %d", (int) luas, (int) keliling);
+                break;
+            
+            case "Persegi Panjang":
+                int panjang = input.nextInt();
+                int lebar = input.nextInt();
+                luas = luasPersegiPanjang(panjang, lebar);
+                keliling = kelilingPersegiPanjang(panjang, lebar);
+                System.out.printf("%d %d", (int) luas, (int) keliling);
+                break;
+
+            case "Segitiga":
+                int alas = input.nextInt();
+                int tinggi = input.nextInt();
+                luas = luasSegitiga(alas, tinggi);
+                keliling = kelilingSegitiga(alas, tinggi);
+                System.out.printf("%d %d", (int) luas, (int) keliling);
+                break;
+
+            case "Lingkaran":
+                int diameter = input.nextInt();
+                luas = luasLingkaran(diameter);
+                keliling = kelilingLingkaran(diameter);
+                System.out.printf("%.2f %.2f", luas, keliling);
+                break;
+
+            default:
+                System.out.println("Bangun datar tidak dikenal");
+                return;
         }
-
-    }
-}
+        
+        input.close();
+    }}
