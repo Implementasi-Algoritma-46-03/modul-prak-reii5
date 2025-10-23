@@ -1,15 +1,13 @@
 import java.util.Scanner;
 
 public class TP01 {
-    public static void konversCel(double suhu){
+    public static double konversCel(double suhu){
         double celcius = 5.0 / 9 * (suhu - 32); 
-        System.out.print("Celcius: ");
-        System.out.printf("%.1f", celcius);
+        return celcius;
     }
-    public static void konversiRea(double suhu){
+    public static double konversiRea(double suhu){
         double reamur = 4.0 / 9 * (suhu - 32);
-        System.out.print("Reamur: ");
-        System.out.printf("%.2f", reamur);
+        return reamur;
     }
     public static void main(final String[] args) {
         // Kerjakan soalnya di sini
@@ -18,16 +16,15 @@ public class TP01 {
         double suhu2 = in.nextDouble();
         double suhu3 = in.nextDouble();
 
-        konversCel(suhu1);
-        System.out.println();
-        konversCel(suhu2);
-        System.out.println();
-        konversCel(suhu3);
-        System.out.println();
-        konversiRea(suhu1);
-        System.out.println();
-        konversiRea(suhu2);
-        System.out.println();
-        konversiRea(suhu3);
-    }
+        double celMin = konversCel(suhu1);
+        double celAvr = konversCel(suhu2);
+        double celMAx = konversCel(suhu3);
+        double reMin = konversiRea(suhu1);
+        double reAvr = konversiRea(suhu2);
+        double reMax = konversiRea(suhu3);
+
+        System.out.printf("Celcius: %.1f %.1f %.1f%n", celMin, celAvr, celMAx);
+        System.out.printf("Reamur: %.2f %.2f %.2f%n", reMin, reAvr, reMax);
+
+    }   
 }
