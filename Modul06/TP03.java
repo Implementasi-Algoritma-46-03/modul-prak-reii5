@@ -4,13 +4,13 @@ public class TP03 {
     public static void persegi(int angka){
         int luas = angka * angka;
         int keliling = 4 * angka;
-        System.out.println(luas);
+        System.out.print(luas);
         System.out.println(keliling);
     }
     public static void persegiPanjang(int angka, int angka2){
         int luas = angka * angka2;
         int keliling = 2 * (angka + angka2);
-        System.out.println(luas);
+        System.out.print(luas);
         System.out.println(keliling);
     }
     public static void segitiga(int angka, int angka2){
@@ -25,7 +25,7 @@ public class TP03 {
             kelilingint = kelilingint;
         }
 
-        System.out.println((int) luas);
+        System.out.print((int) luas);
         System.out.println(kelilingint);
     }
     public static void lingkaran(int angka){
@@ -34,7 +34,6 @@ public class TP03 {
         double luas = pi * ((double) jari_jari * jari_jari);
         double keliling = 2 * pi * jari_jari;
         System.out.printf("%.2f", luas);
-        System.out.println();
         System.out.printf("%.2f", keliling);
 
     }
