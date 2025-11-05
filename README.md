@@ -1,8 +1,8 @@
 ## Identitas
 
-Nama: 
+Nama: Sofian Triadi
 
-NIM : 
+NIM : 607062500041
 
 ## Instruksi
 
