@@ -26,4 +26,5 @@ public class Jurnal03 {
             System.out.println("BUKAN");
             }
         }
-    }
+        
+    } 
