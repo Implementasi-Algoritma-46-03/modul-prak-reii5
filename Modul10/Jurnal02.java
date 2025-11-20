@@ -11,7 +11,7 @@ public class Jurnal02 {
         for (int i = 1; i <= masukan; i++){
 
             for (int j = 1; j <= masukan; j++){
-                System.out.printf("%-4d", i *j);
+                System.out.printf("%-2d", i *j);
             }
             System.out.println();
         }
