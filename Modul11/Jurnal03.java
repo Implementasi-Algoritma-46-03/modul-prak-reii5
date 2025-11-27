@@ -18,7 +18,7 @@ public class Jurnal03 {
         } while (a != -1);
 
         for (int i=0; i<arr.size(); i++) {
-            for (int j=i; j<arr.size(); j++) {
+            for (int j=0; j<arr.size(); j++) {
                 if (arr.get(i) == arr.get(j));
                     counter++;
             }
