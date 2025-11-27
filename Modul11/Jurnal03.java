@@ -4,7 +4,7 @@ public class Jurnal03 {
 
     public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
-        int counter = 0;
+        int counter;
         int hasilAkhir = 0;
         int a;
         int modus = 0;
@@ -18,13 +18,15 @@ public class Jurnal03 {
         } while (a != -1);
 
         for (int i=0; i<arr.size(); i++) {
+            counter = 0;
             for (int j=0; j<arr.size(); j++) {
-                if (arr.get(i) == arr.get(j));
+                if (arr.get(i).equals(arr.get(j))){
                     counter++;
+                }
             }
-            if (counter >= hasilAkhir) {
-                modus = arr.get(i);
+            if (counter > hasilAkhir || (counter == hasilAkhir && arr.get(i) > modus)) {
                 hasilAkhir = counter;
+                modus = arr.get(i);
             }
         }
         System.out.println(modus);
