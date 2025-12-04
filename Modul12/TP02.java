@@ -45,5 +45,6 @@ public class TP02 {
         print(hasilnya, masukan);
 
         
+   
     }
 }

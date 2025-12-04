@@ -42,7 +42,7 @@ public class TP03 {
 
         int[][] hasil = hasil(array1, array2, masukan);
         print(hasil, masukan);
-    
+     
 
     }
 }
