@@ -6,25 +6,23 @@ public class Jurnal02 {
         Scanner in = new Scanner(System.in);
 
         int masukan = in.nextInt();
-        int[][] matriks = new int[masukan][masukan];
+        int[][] board = new int[masukan][masukan];
 
-        // Input matriks
+        // input matriks
         for (int i = 0; i < masukan; i++) {
             for (int j = 0; j < masukan; j++) {
-                matriks[i][j] = in.nextInt();
+                board[i][j] = in.nextInt();
             }
         }
 
-        int hasil = pemenang(matriks);
+        int winner = cekPemenang(board, masukan);
 
-        if (hasil == 1) {
+        if (winner == 1) {
             System.out.println("O");
-        } 
-        else if (hasil == 2) {
+        } else if (winner == 2) {
             System.out.println("X");
-        } 
-        else {
-            if (seri(matriks)) {
+        } else {
+            if (isFull(board, masukan)) {
                 System.out.println("-");
             } else {
                 System.out.println("?");
@@ -32,58 +30,75 @@ public class Jurnal02 {
         }
     }
 
-    // Menentukan pemenang tic-tac-toe
-    private static int pemenang(int[][] matriks) {
+    // Cek baris, kolom, diagonal
+    private static int cekPemenang(int[][] b, int masukan) {
 
-        // Cek baris
-        for (int i = 0; i < matriks.length; i++) {
-            if (matriks[i][0] == matriks[i][1] &&
-                matriks[i][1] == matriks[i][2] &&
-                matriks[i][0] != 0) 
-            {
-                return matriks[i][0];
+        // Cek semua baris
+        for (int i = 0; i < masukan; i++) {
+            int first = b[i][0];
+            if (first != 0) {
+                boolean sama = true;
+                for (int j = 1; j < masukan; j++) {
+                    if (b[i][j] != first) {
+                        sama = false;
+                        break;
+                    }
+                }
+                if (sama) return first;
             }
         }
 
-        // Cek kolom
-        for (int j = 0; j < matriks.length; j++) {
-            if (matriks[0][j] == matriks[1][j] &&
-                matriks[1][j] == matriks[2][j] &&
-                matriks[0][j] != 0) 
-            {
-                return matriks[0][j];
+        // Cek semua kolom
+        for (int j = 0; j < masukan; j++) {
+            int first = b[0][j];
+            if (first != 0) {
+                boolean sama = true;
+                for (int i = 1; i < masukan; i++) {
+                    if (b[i][j] != first) {
+                        sama = false;
+                        break;
+                    }
+                }
+                if (sama) return first;
             }
         }
 
         // Cek diagonal utama
-        if (matriks[0][0] == matriks[1][1] &&
-            matriks[1][1] == matriks[2][2] &&
-            matriks[0][0] != 0) 
-        {
-            return matriks[0][0];
-        }
-
-        // Cek diagonal kedua
-        if (matriks[2][0] == matriks[1][1] &&
-            matriks[1][1] == matriks[0][2] &&
-            matriks[2][0] != 0) 
-        {
-            return matriks[2][0];
-        }
-
-        return 0; // Tidak ada pemenang
-    }
-
-    // Mengecek apakah seri
-    private static boolean seri(int[][] matriks) {
-
-        for (int i = 0; i < matriks.length; i++) {
-            for (int j = 0; j < matriks.length; j++) {
-                if (matriks[i][j] == 0) {
-                    return false; // Masih ada ruang kosong → belum seri
+        int first = b[0][0];
+        if (first != 0) {
+            boolean sama = true;
+            for (int i = 1; i < masukan; i++) {
+                if (b[i][i] != first) {
+                    sama = false;
+                    break;
                 }
             }
+            if (sama) return first;
         }
 
-        return true; // Tidak ada 0 → papan penuh → seri
-    }}
+        // Cek diagonal anti (kebalikan)
+        first = b[0][masukan-1];
+        if (first != 0) {
+            boolean sama = true;
+            for (int i = 1; i < masukan; i++) {
+                if (b[i][masukan - 1 - i] != first) {
+                    sama = false;
+                    break;
+                }
+            }
+            if (sama) return first;
+        }
+
+        return 0; // tidak ada pemenang
+    }
+
+    // Cek apakah papan penuh
+    private static boolean isFull(int[][] b, int masukan) {
+        for (int i = 0; i < masukan; i++) {
+            for (int j = 0; j < masukan; j++) {
+                if (b[i][j] == 0) return false;
+            }
+        }
+        return true;
+    }
+}
