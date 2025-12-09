@@ -32,7 +32,9 @@ public class TP02 {
         for(int i = 0; i <2; i++){
             for (int j = 0; j < 10;j++){
                 System.out.printf("%.2f",hasil[i][j]);
-                System.out.print(" ");
+                if(j < 10-1){
+                 System.out.print(" ");
+                }
             }
             System.out.println();
         }
